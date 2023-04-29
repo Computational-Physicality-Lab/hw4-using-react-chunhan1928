@@ -1,0 +1,50 @@
+/* content */
+#content {
+    margin: 0 30px;
+}
+
+/* detail.html content */
+#shirt-data {
+    display: flex;
+}
+
+#shirt-img {
+    width: 20vw;
+}
+
+#shirt-detail {
+    margin: 0 30px;
+}
+
+#shirt-price {
+    color: #c51230;
+}
+
+#shirt-description {
+    color: #c51230;
+}
+
+#shirt-side-nav button {
+    padding: 10px;
+    margin: 5px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #c51230;
+    color: white;
+}
+
+#shirt-side-nav button:hover {
+    color: black;
+}
+
+#shirt-color-nav button {
+    padding: 10px;
+    margin: 5px;
+    border: solid 1px #c51230;
+    border-radius: 10px;
+    color: black;
+}
+
+#shirt-color-nav button:hover {
+    color: white;
+}

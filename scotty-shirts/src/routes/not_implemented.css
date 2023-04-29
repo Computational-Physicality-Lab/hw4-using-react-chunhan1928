@@ -1,0 +1,17 @@
+/* content */
+/* not implemented*/
+#content {
+    margin: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#content img {
+    width: 50vw;
+    opacity: 20%;
+}
+
+#content p {
+    color: gray;
+}

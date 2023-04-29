@@ -1,0 +1,45 @@
+button,
+li {
+    transition: 0.5s;
+}
+
+/* header */
+header {
+    box-sizing: border-box;
+    width: 100vw;
+    background-color: white;
+}
+
+#header-title {
+    display: flex;
+    align-items: center;
+    font-family: "Catamaran";
+}
+
+#header-title img {
+    width: 50%;
+    margin-left: 10vw;
+}
+
+#header-nav {
+    border-top: lightgray 1px solid;
+    border-bottom: lightgray 1px solid;
+    padding: 15px;
+}
+
+#header-nav ul {
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#header-nav li a {
+    text-decoration: none;
+    color: #c51230;
+}
+
+#header-nav li a:hover {
+    text-decoration: underline;
+}
