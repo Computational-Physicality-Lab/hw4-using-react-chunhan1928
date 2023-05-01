@@ -1,17 +1,17 @@
 /* content */
 /* not implemented*/
-#content {
+#notImplemented-content {
     margin: 0 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#content #not-implemented-img {
+#notImplemented-img {
     width: 50vw;
     opacity: 20%;
 }
 
-#content p {
+#notImplemented-content p {
     color: gray;
 }

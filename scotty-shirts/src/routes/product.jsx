@@ -12,7 +12,7 @@ export default function Product() {
     const image = shirt['colors'][color][side] || shirt['default'][side] || shirt['default']['front'] || ''
 
     return (
-        <div id="content">
+        <div id="product-content">
             <h2 id="shirt-name">{shirt.name || "No Name"}</h2>
             <div id="shirt-data">
                 <img id="shirt-img" src={image} />

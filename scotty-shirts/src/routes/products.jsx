@@ -11,7 +11,7 @@ export default function Products() {
             key={shirt.name} />
     )
     return (
-        <div id="content">
+        <div id="products-content">
             <h2>Our T-Shirts</h2>
             <div id="products-menu">
                 {products}
@@ -28,7 +28,7 @@ function Product({ name, colors, defaultImages }) {
             <img src={images.front} alt={name} />
             <h3>{name}</h3>
             <p>Available in {colorCount} colors</p>
-            <Link to={`/product/${name}`}>See Page</Link>
+            <Link to={`/product/${name}`}><button>See Page</button></Link>
         </div>
     )
 

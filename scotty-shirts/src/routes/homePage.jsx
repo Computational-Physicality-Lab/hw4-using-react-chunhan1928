@@ -2,7 +2,7 @@ import banner from "../assets/images/banner.png"
 import './homePage.css'
 export default function HomePage() {
     return (
-        <div id="content">
+        <div id="home-content">
             <img id="home-img" src={banner} alt="banner.png" />
             <div id="home-bulletinBoard">
                 <div className="announce">

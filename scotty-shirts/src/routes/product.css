@@ -1,5 +1,5 @@
 /* content */
-#content {
+#product-content {
     margin: 0 30px;
 }
 
@@ -9,7 +9,7 @@
 }
 
 #shirt-img {
-    width: 20vw;
+    width: 40vw;
 }
 
 #shirt-detail {
