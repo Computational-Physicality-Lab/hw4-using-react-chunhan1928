@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-#content img {
+#content #not-implemented-img {
     width: 50vw;
     opacity: 20%;
 }

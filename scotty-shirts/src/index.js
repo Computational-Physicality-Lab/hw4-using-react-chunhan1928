@@ -13,7 +13,7 @@ import Footer from './layout/footer'
 import HomePage from './routes/homePage';
 import NotImplemented from './routes/not_implemented';
 import Products from './routes/products';
-import Details from './routes/details';
+import Product from './routes/product';
 
 function BasicLayout() {
   return (
@@ -27,11 +27,11 @@ function BasicLayout() {
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<BasicLayout />}>
+    < Route path="/" element={<BasicLayout />}>
       <Route index element={<HomePage />} />
       <Route path="not-implemented" element={<NotImplemented />} />
-      <Route path="products" element={<Products />}></Route>
-      <Route path="details" element={<Details />}></Route>
+      <Route path="products" element={<Products />} />
+      <Route path="product/:id" element={<Product />}></Route>
     </Route>
   )
 )

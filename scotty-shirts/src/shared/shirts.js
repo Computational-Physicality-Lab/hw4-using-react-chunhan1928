@@ -30,7 +30,12 @@ import DefaultMaleFront from "../assets/shirt_images/default-m-front.png";
 import DefaultMaleBack from "../assets/shirt_images/default-m-back.png";
 import DefaultFemaleFront from "../assets/shirt_images/default-w-front.png";
 import DefaultFemaleBack from "../assets/shirt_images/default-w-back.png";
-
+// rest assure that all imported path is valid (or the error will occur)
+/* the possible bugs 
+    (1) some necessary keys don't exist (undefined)
+    (2) empty value for some key
+    we assume that "default" always exists
+*/
 
 export default [{
     "name": "Beep Boop",
