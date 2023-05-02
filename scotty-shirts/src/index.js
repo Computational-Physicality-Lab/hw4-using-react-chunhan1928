@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  RouterProvider,
+  BrowserRouter,
+  Routes,
   Route,
   Outlet,
 } from "react-router-dom";
@@ -25,21 +24,25 @@ function BasicLayout() {
   )
 }
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    < Route path="/" element={<BasicLayout />}>
-      <Route index element={<HomePage />} />
-      <Route path="not-implemented" element={<NotImplemented />} />
-      <Route path="products" element={<Products />} />
-      <Route path="product/:id" element={<Product />}></Route>
-    </Route>
+function App() {
+  return (
+    <Routes>
+      < Route path="/" element={<BasicLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="products">
+          <Route index element={<Products />} />
+          <Route path=":id" element={<Product />}></Route>
+        </Route>
+        <Route path="not-implemented" element={<NotImplemented />} />
+      </Route>
+    </Routes>
   )
-)
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter><App /></BrowserRouter>
   </React.StrictMode>
 );
 

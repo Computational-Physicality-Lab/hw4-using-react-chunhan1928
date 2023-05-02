@@ -28,7 +28,7 @@ function Product({ name, colors, defaultImages }) {
             <img src={images.front} alt={name} />
             <h3>{name}</h3>
             <p>Available in {colorCount} colors</p>
-            <Link to={`/product/${name}`}><button>See Page</button></Link>
+            <Link to={`${name}`}><button>See Page</button></Link>
         </div>
     )
 
