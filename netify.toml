@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish="scotty-shirts/build"
+  base = "scotty-shirts"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
