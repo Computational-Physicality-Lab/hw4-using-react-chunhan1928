@@ -48,3 +48,35 @@
 #shirt-color-nav button:hover {
     color: white;
 }
+
+#shirt-quantity-nav select {
+    padding: 10px;
+    margin: 5px;
+    border: solid 1px #c51230;
+    border-radius: 10px;
+}
+
+#shirt-size-nav select {
+    padding: 10px;
+    margin: 5px;
+    border: solid 1px #c51230;
+    border-radius: 10px;
+}
+
+#shirt-addToCartBtn {
+    padding: 20px;
+    margin: 5px;
+    color: white;
+    background-color: #c51230;
+    border: none;
+    border-radius: 10px;
+}
+
+#shirt-addToCartBtn:hover {
+    color: black
+}
+
+#shirt-addToCartBtn[disabled] {
+    color: gray;
+    background-color: lightgray;
+}

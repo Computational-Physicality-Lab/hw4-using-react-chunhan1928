@@ -3,6 +3,11 @@ body {
   font-family: "Open Sans";
 }
 
+button,
+li {
+  transition: 0.5s;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
