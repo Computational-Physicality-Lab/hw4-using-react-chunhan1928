@@ -23,14 +23,14 @@ import Cart from './routes/cart'
 function App() {
   const [cartItems, setCartItems] = useState([])
   const [cartItemID, setCartItemID] = useState(1)
-  const countCartShirts = cartItems.reduce(
+  const cartShirtsNum = cartItems.reduce(
     (accumulator, item) => {
       return accumulator + Number(item.quantity)
     }, 0)
 
   return (
     <>
-      <Header countCartShirts={countCartShirts} />
+      <Header cartShirtsNum={cartShirtsNum} />
       <Routes>
         < Route path="/" >
           <Route index element={<HomePage />} />
@@ -47,7 +47,7 @@ function App() {
               handleRemoveFromCart={handleRemoveFromCart}
               handleChangeQuantity={handleChangeQuantity} />}
           />
-          <Route path="not-implemented" element={<NotImplemented />} />
+          <Route path="*" element={<NotImplemented />} />
         </Route>
       </Routes>
       <Footer />

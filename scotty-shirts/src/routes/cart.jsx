@@ -5,11 +5,15 @@ import { Link } from "react-router-dom"
 import './cart.css'
 
 export default function Cart({ cartItems, handleRemoveFromCart, handleChangeQuantity }) {
-    let subTotal = calcSubTotal()
-    let estShipping = 6.95
+    const subTotal = calcSubTotal(shirts, cartItems)
+    const estShipping = 6.95
+    const cartShirtsNum = cartItems.reduce(
+        (accumulator, item) => {
+            return accumulator + Number(item.quantity)
+        }, 0)
     return (
         <div id='cart-content'>
-            <h2>My Cart</h2>
+            <h2>My Cart ({cartShirtsNum})</h2>
             <div id="cart-detail">
                 <div id="cart-items">
                     {cartItems == 0 ?
@@ -48,16 +52,6 @@ export default function Cart({ cartItems, handleRemoveFromCart, handleChangeQuan
             </div>
         </div>
     )
-    function calcSubTotal() {
-        let subTotal = 0
-        for (let item of cartItems) {
-            let shirt = shirts.filter((shirt) => shirt.name == item.name)[0]
-            let singlePrice = Number(shirt.price.split('$').join(''))
-            let itemShirtNum = Number(item.quantity)
-            subTotal += (singlePrice * itemShirtNum)
-        }
-        return Number(subTotal.toFixed(2))
-    }
 }
 
 function CartItem({ item, handleRemoveFromCart, handleChangeQuantity }) {
@@ -68,7 +62,7 @@ function CartItem({ item, handleRemoveFromCart, handleChangeQuantity }) {
         <div className="cartItem">
             <h3>{item.name}</h3>
             <div className="cartItem-data">
-                <img src={shirtImage} alt="" />
+                <Link to={`/products/${item.name}`}><img src={shirtImage} alt="" /></Link>
                 <div className="cartItem-detail">
                     <div className="cartItem-quantity">
                         <label>Quantity: </label>
@@ -101,4 +95,15 @@ function CartItem({ item, handleRemoveFromCart, handleChangeQuantity }) {
             </div>
         </div>
     )
+}
+
+function calcSubTotal(shirts, cartItems) {
+    let subTotal = 0
+    for (let item of cartItems) {
+        let shirt = shirts.filter((shirt) => shirt.name == item.name)[0]
+        let singlePrice = Number(shirt.price.split('$').join(''))
+        let itemShirtNum = Number(item.quantity)
+        subTotal += (singlePrice * itemShirtNum)
+    }
+    return Number(subTotal.toFixed(2))
 }

@@ -3,7 +3,7 @@ import logo from "../assets/images/logo.png"
 import cart from "../assets/images/cart.png"
 import './header.css'
 
-export default function Header({ countCartShirts }) {
+export default function Header({ cartShirtsNum }) {
     return (
         <header>
             <div id="header-title">
@@ -11,7 +11,7 @@ export default function Header({ countCartShirts }) {
                 <h1>Scotty Shirt U Illustrate (SSUI)</h1>
                 <Link id='header-title-cart' to='cart'>
                     <img src={cart} />
-                    <div>{countCartShirts}</div>
+                    <div>{cartShirtsNum}</div>
                 </Link>
             </div>
             <nav id="header-nav">
