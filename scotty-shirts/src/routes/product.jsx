@@ -2,18 +2,19 @@ import shirts from "../shared/shirts"
 import no_shirt from "../shared/no_shirt";
 import { useParams } from "react-router-dom"
 import { useState } from "react";
+import { arrayRange } from "../utils"
 import './product.css'
 
 const sizeList = ['Size', 'Women’s XS', 'Women’s S', 'Women’s M', 'Women’s L', 'Women’s XL', 'Women’s 2XL',
     'Men’s XS', 'Men’s S', 'Men’s M', 'Men’s L', 'Men’s XL', 'Men’s 2XL']
 
-export default function Product() {
+export default function Product({ handleAddToCart }) {
     const [side, setSide] = useState('front')
     const [color, setColor] = useState('white')
     const [size, setSize] = useState('Size:')
     const [quantity, setQuantity] = useState(1)
-    const { id } = useParams();
-    const shirt = shirts.filter(shirt => shirt.name === id)[0] || no_shirt
+    const { name } = useParams();
+    const shirt = shirts.filter(shirt => shirt.name === name)[0] || no_shirt
     const image = shirt['colors'][color][side] || shirt['default'][side] || shirt['default']['front'] || ''
     const addToCartBtnDisabled = Boolean(!shirt.price || size === 'Size:')
 
@@ -64,7 +65,7 @@ export default function Product() {
                             defaultValue="Size"
                             onChange={(e) => { setSize(e.target.value) }}>
                             {sizeList.map((sizeOption) =>
-                                sizeOption == 'Size:' ?
+                                sizeOption == 'Size' ?
                                     <option disabled key={sizeOption}>{sizeOption}</option> :
                                     <option key={sizeOption}>{sizeOption}</option>
                             )}
@@ -74,8 +75,7 @@ export default function Product() {
                         id="shirt-addToCartBtn"
                         disabled={addToCartBtnDisabled}
                         onClick={() => {
-                            console.log(side, color, size, quantity)
-                            console.log(`addToCartBtnDisabled: ${addToCartBtnDisabled}`)
+                            handleAddToCart(name, color, size, quantity)
                         }}>
                         Add to Cart
                     </button>
@@ -83,11 +83,4 @@ export default function Product() {
             </div>
         </div>
     )
-}
-
-function arrayRange(start, stop, step) {
-    return Array.from(
-        { length: (stop - start) / step + 1 },
-        (value, index) => start + index * step
-    );
 }

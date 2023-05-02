@@ -1,0 +1,16 @@
+#cart-detail {
+    display: flex;
+}
+
+.cartItem {
+    border-top: 1px solid #c51230;
+    margin: 20px 0;
+}
+
+.cartItem-data {
+    display: flex;
+}
+
+.cartItem-data img {
+    width: 15vw;
+}

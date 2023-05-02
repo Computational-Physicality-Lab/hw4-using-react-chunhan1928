@@ -8,12 +8,26 @@ header {
 #header-title {
     display: flex;
     align-items: center;
+    justify-content: space-around;
     font-family: "Catamaran";
 }
 
 #header-title img {
-    width: 50%;
-    margin-left: 10vw;
+    height: 10vh;
+}
+
+#header-title-cart {
+    display: flex;
+    align-items: center;
+    background-color: #9E3136;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+#header-title-cart div {
+    color: white;
+    font-size: 1.8em;
+    padding: 15px;
 }
 
 #header-nav {

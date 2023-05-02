@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom"
 import logo from "../assets/images/logo.png"
+import cart from "../assets/images/cart.png"
 import './header.css'
 
-export default function Header() {
+export default function Header({ countCartShirts }) {
     return (
         <header>
             <div id="header-title">
                 <Link to="/"><img src={logo} alt="logo.png" /></Link>
                 <h1>Scotty Shirt U Illustrate (SSUI)</h1>
+                <Link id='header-title-cart' to='cart'>
+                    <img src={cart} />
+                    <div>{countCartShirts}</div>
+                </Link>
             </div>
             <nav id="header-nav">
                 <ul>
