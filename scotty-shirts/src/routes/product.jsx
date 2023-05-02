@@ -2,7 +2,7 @@ import shirts from "../shared/shirts"
 import no_shirt from "../shared/no_shirt";
 import { useParams } from "react-router-dom"
 import { useState } from "react";
-import { arrayRange } from "../utils"
+import { arrayRange, findValidImage } from "../utils"
 import './product.css'
 
 const sizeList = ['Size', 'Women’s XS', 'Women’s S', 'Women’s M', 'Women’s L', 'Women’s XL', 'Women’s 2XL',
@@ -15,7 +15,7 @@ export default function Product({ handleAddToCart }) {
     const [quantity, setQuantity] = useState(1)
     const { name } = useParams();
     const shirt = shirts.filter(shirt => shirt.name === name)[0] || no_shirt
-    const image = shirt['colors'][color][side] || shirt['default'][side] || shirt['default']['front'] || ''
+    const image = findValidImage(shirt, color, side)
     const addToCartBtnDisabled = Boolean(!shirt.price || size === 'Size:')
 
     return (
@@ -84,3 +84,4 @@ export default function Product({ handleAddToCart }) {
         </div>
     )
 }
+

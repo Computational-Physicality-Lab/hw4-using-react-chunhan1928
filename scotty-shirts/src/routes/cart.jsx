@@ -1,6 +1,6 @@
 import shirts from "../shared/shirts"
 import no_shirt from "../shared/no_shirt"
-import { arrayRange } from "../utils"
+import { arrayRange, findValidImage } from "../utils"
 import { Link } from "react-router-dom"
 import './cart.css'
 
@@ -56,7 +56,7 @@ export default function Cart({ cartItems, handleRemoveFromCart, handleChangeQuan
 
 function CartItem({ item, handleRemoveFromCart, handleChangeQuantity }) {
     const shirt = shirts.filter(shirt => shirt.name === item.name)[0] || no_shirt
-    const shirtImage = shirt['colors'][item.color]['front'] || shirt['default']['front'] || shirt['default']['front'] || ''
+    const shirtImage = findValidImage(shirt, item.color, item.side)
 
     return (
         <div className="cartItem">

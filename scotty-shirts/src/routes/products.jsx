@@ -1,45 +1,34 @@
 import { Link } from "react-router-dom"
 import shirts from "../shared/shirts"
+import { findValidImage } from "../utils"
 import "./products.css"
 
 export default function Products() {
-    let products = shirts.map(shirt =>
-        <Product
-            name={shirt.name || "No Name"}
-            colors={shirt.colors || {}}
-            defaultImages={shirt.default || {}}
-            key={shirt.name} />
-    )
     return (
         <div id="products-content">
             <h2>Our T-Shirts</h2>
             <div id="products-menu">
-                {products}
+                {shirts.map(shirt =>
+                    <Product
+                        shirt={shirt}
+                        key={shirt.name} />
+                )}
             </div>
         </div>
     )
 }
 
-function Product({ name, colors, defaultImages }) {
-    let images = findFisrtValidImages(colors, defaultImages)
+function Product({ shirt }) {
+    let name = shirt.name || "No Name"
+    let colors = shirt.colors || {}
+    let image = findValidImage(shirt, "", "front")
     let colorCount = Object.keys(colors).length
     return (
         <div className="product">
-            <img src={images.front} alt={name} />
+            <img src={image} alt={name} />
             <h3>{name}</h3>
             <p>Available in {colorCount} colors</p>
             <Link to={`${name}`}><button>See Page</button></Link>
         </div>
     )
-
-    function findFisrtValidImages(colors = {}, defaultImages = {}) {
-        let images = defaultImages
-        for (let key of Object.keys(colors)) {
-            if (colors[key]["front"] && colors[key]["back"]) {
-                images = colors[key]
-                break
-            }
-        }
-        return images
-    }
 }
