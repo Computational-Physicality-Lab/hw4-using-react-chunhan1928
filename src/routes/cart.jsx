@@ -30,16 +30,16 @@ export default function Cart({ cartItems, handleRemoveFromCart, handleChangeQuan
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>Subtotal</td>
-                                    <td>$ {subTotal}</td>
+                                    <td className="cart-invoice-category">Subtotal</td>
+                                    <td className="cart-invoice-price">$ {subTotal.toFixed(2)}</td>
                                 </tr>
                                 <tr>
-                                    <td>Est. Shipping</td>
-                                    <td>$ {estShipping}</td>
+                                    <td className="cart-invoice-category">Est. Shipping</td>
+                                    <td className="cart-invoice-price">$ {estShipping.toFixed(2)}</td>
                                 </tr>
                                 <tr>
-                                    <td>Total</td>
-                                    <td>$ {(subTotal + estShipping).toFixed(2)}</td>
+                                    <td className="cart-invoice-category">Total</td>
+                                    <td className="cart-invoice-price">$ {(subTotal + estShipping).toFixed(2)}</td>
                                 </tr>
                             </tbody>
                         </table>
