@@ -37,7 +37,7 @@ import DefaultFemaleBack from "../assets/shirt_images/default-w-back.png";
     we assume that "default" always exists
 */
 
-export default [{
+const shirts = [{
     "name": "Beep Boop",
     "description": "Once upon a time, a mighty guide guarded the intersection of Forbes and Morewood, and would dutifully direct distracted college students when it was safe to cross the street. Its voice was soothing, strong, and steady. Its name was beep boop.",
     "price": "$19.99",
@@ -129,3 +129,5 @@ export default [{
         "back": DefaultMaleBack
     }
 }];
+
+export default shirts

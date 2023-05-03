@@ -16,7 +16,7 @@ export default function Cart({ cartItems, handleRemoveFromCart, handleChangeQuan
             <h2>My Cart ({cartShirtsNum})</h2>
             <div id="cart-detail">
                 <div id="cart-items">
-                    {cartItems == 0 ?
+                    {cartItems === 0 ?
                         <h3>Your Cart Is Empty</h3> :
                         cartItems.map(item =>
                             <CartItem item={item} key={item.id}
@@ -100,7 +100,7 @@ function CartItem({ item, handleRemoveFromCart, handleChangeQuantity }) {
 function calcSubTotal(shirts, cartItems) {
     let subTotal = 0
     for (let item of cartItems) {
-        let shirt = shirts.filter((shirt) => shirt.name == item.name)[0]
+        let shirt = shirts.filter((shirt) => shirt.name === item.name)[0]
         let singlePrice = Number(shirt.price.split('$').join(''))
         let itemShirtNum = Number(item.quantity)
         subTotal += (singlePrice * itemShirtNum)

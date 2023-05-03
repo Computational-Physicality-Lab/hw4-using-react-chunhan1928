@@ -22,7 +22,7 @@ export default function Product({ handleAddToCart }) {
         <div id="product-content">
             <h2 id="shirt-name">{shirt.name || "No Name"}</h2>
             <div id="shirt-data">
-                <img id="shirt-img" src={image} />
+                <img id="shirt-img" src={image} alt={name} />
                 <div id="shirt-detail">
                     <h3 id="shirt-price">
                         {shirt.price || "No Price"}
@@ -65,7 +65,7 @@ export default function Product({ handleAddToCart }) {
                             defaultValue="Size"
                             onChange={(e) => { setSize(e.target.value) }}>
                             {sizeList.map((sizeOption) =>
-                                sizeOption == 'Size' ?
+                                sizeOption === 'Size' ?
                                     <option disabled key={sizeOption}>{sizeOption}</option> :
                                     <option key={sizeOption}>{sizeOption}</option>
                             )}

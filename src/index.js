@@ -5,7 +5,6 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Outlet,
 } from "react-router-dom";
 import './index.css';
 import Header from './layout/header'
@@ -66,13 +65,13 @@ function App() {
   }
   function handleRemoveFromCart(id) {
     setCartItems(
-      cartItems.filter(item => item.id != id)
+      cartItems.filter(item => item.id !== id)
     )
   }
   function handleChangeQuantity(id, quantity) {
     setCartItems(
       cartItems.map(item => {
-        if (item.id == id) {
+        if (item.id === id) {
           return { ...item, quantity: quantity }
         } else {
           return item

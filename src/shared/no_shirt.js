@@ -1,7 +1,7 @@
 import DefaultMaleFront from "../assets/shirt_images/default-m-front.png";
 import DefaultMaleBack from "../assets/shirt_images/default-m-back.png";
 
-export default {
+const no_shirt = {
     'name': "",
     'description': "",
     'price': "",
@@ -11,3 +11,5 @@ export default {
         'back': DefaultMaleBack,
     },
 }
+
+export default no_shirt

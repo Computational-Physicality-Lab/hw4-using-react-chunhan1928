@@ -10,7 +10,7 @@ export default function Header({ cartShirtsNum }) {
                 <Link to="/"><img src={logo} alt="logo.png" /></Link>
                 <h1>Scotty Shirt U Illustrate (SSUI)</h1>
                 <Link id='header-title-cart' to='cart'>
-                    <img src={cart} />
+                    <img src={cart} alt="cart" />
                     <div>{cartShirtsNum}</div>
                 </Link>
             </div>
